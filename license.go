@@ -1,4 +1,4 @@
-package issuer
+package bitlicense
 
 type License struct {
 	Client    string

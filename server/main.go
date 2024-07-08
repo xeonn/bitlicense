@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/thatisuday/commando"
-	"gitlab.com/bitify-pub/bitlicense/issuer"
-	"gitlab.com/bitify-pub/bitlicense/server/fxserver"
+	"github.com/xeonn/bitlicense"
+	"github.com/xeonn/bitlicense/server/fxserver"
 	"gitlab.com/bitify-pub/byutils/timeutils"
 )
 
@@ -95,7 +95,7 @@ or 2023-12-06 (which will be assumed to be 00:00:00)
 			// expiry time must be rounded to the previous 5 minutes
 			rounded := timeutils.RoundDownTo5Minutes(expiryTime.UTC())
 
-			lic := issuer.Issue(client, rounded)
+			lic := bitlicense.Issue(client, rounded)
 
 			jstr, err := json.Marshal(lic)
 			if err != nil {
@@ -115,7 +115,7 @@ or 2023-12-06 (which will be assumed to be 00:00:00)
 				panic("missing file")
 			}
 
-			if ok := issuer.ValidateFile(file); !ok {
+			if ok := bitlicense.ValidateFile(file); !ok {
 				fmt.Println("License file is invalid")
 				return
 			} else {

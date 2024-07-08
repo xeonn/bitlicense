@@ -1,4 +1,4 @@
-module gitlab.com/bitify-pub/bitlicense
+module github.com/xeonn/bitlicense
 
 go 1.22.4
 
