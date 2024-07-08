@@ -1,4 +1,4 @@
-module bitify.my/bitlicense/server
+module gitlab.com/bitify-pub/bitlicense
 
 go 1.22.4
 

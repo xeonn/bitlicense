@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"time"
 
-	"bitify.my/bitlicense/server/fxserver"
-	"bitify.my/bitlicense/server/issuer"
 	"github.com/thatisuday/commando"
+	"gitlab.com/bitify-pub/bitlicense/issuer"
+	"gitlab.com/bitify-pub/bitlicense/server/fxserver"
 	"gitlab.com/bitify-pub/byutils/timeutils"
 )
 
