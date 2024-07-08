@@ -44,3 +44,28 @@ To validate a license key, run the following command
 cd bitlicense.git/server
 go run *.go validate --file demo.json
 ```
+
+### In your Go project
+Import bitlicense into your project
+```
+go get github.com/xeonn/bitlicense
+```
+create a folder named `certs` and place your generated public key named `id_ed25519.pub` (this is hardcoded for now)
+```
+mkdir certs
+cp [your_cert_file] certs/id_ed25519.pub
+```
+here's an example for using the validation
+```
+package main
+
+import "github.com/xeonn/bitlicense"
+
+func main() {
+	if bitlicense.ValidateFile("demo.json") {
+		println("License is VALID")
+	} else {
+		println("License is INVALID")
+	}
+}
+``
