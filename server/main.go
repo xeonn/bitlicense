@@ -42,9 +42,9 @@ func main() {
 		SetDescription("Start server that allows license generation and validation via rest api").
 		SetShortDescription("start rest api server").
 		AddFlag("port,P", "port number for server", commando.Int, port).
-		AddFlag("dburi,d", "uri to license database", commando.String, dbUri).
-		AddFlag("dbuser,u", "uri to license database", commando.String, dbUser).
-		AddFlag("dbpass,p", "uri to license database", commando.String, dbPass).
+		AddFlag("dburi,d", "uri to license database (not yet implemented)", commando.String, dbUri).
+		AddFlag("dbuser,u", "database user name (not yet implemented)", commando.String, dbUser).
+		AddFlag("dbpass,p", "database user password (not yet implemented)", commando.String, dbPass).
 		SetAction(func(args map[string]commando.ArgValue, flags map[string]commando.FlagValue) {
 			// port, _ := flags["port"].GetInt()
 			dbUri, _ := flags["dburi"].GetString()
@@ -68,11 +68,11 @@ or 2023-12-06 (which will be assumed to be 00:00:00)
 `,
 			).
 		SetShortDescription("generate license").
-		AddFlag("dburi,d", "uri to license database", commando.String, dbUri).
-		AddFlag("dbuser,u", "uri to license database", commando.String, dbUser).
-		AddFlag("dbpass,p", "uri to license database", commando.String, dbPass).
+		AddFlag("dburi,d", "uri to license database (not yet implemented)", commando.String, dbUri).
+		AddFlag("dbuser,u", "database user name (not yet implemented)", commando.String, dbUser).
+		AddFlag("dbpass,p", "database user password (not yet implemented)", commando.String, dbPass).
 		AddFlag("client,c", "client name", commando.String, nil).
-		AddFlag("expiry,e", "as at date time in UTC: format 2023-12-06T08:00:00Z", commando.String, now.Format(time.RFC3339)).
+		AddFlag("expiry,e", "expiry date and time in UTC: format 2023-12-06 or 2023-12-06T08:00:00Z", commando.String, now.Format(time.RFC3339)).
 		SetAction(func(args map[string]commando.ArgValue, flags map[string]commando.FlagValue) {
 			// dbUri, _ := flags["dburi"].GetString()
 			// dbUser, _ := flags["dbuser"].GetString()
